@@ -82,7 +82,7 @@ module.exports = function(source) {
                         cell : bemCell,
                         exist,
                         // prepare path for require cause relative returns us string that we couldn't require
-                        path : requiredPath(path.relative(path.dirname(this.resourcePath), entityPath))
+                        path : requiredPath(path.relative(path.dirname(this.resourcePath), entityPath)).replace(/\\/g, "/")
                     };
                 });
         });
